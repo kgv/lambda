@@ -4,21 +4,13 @@ use std::collections::HashSet;
 use syn::{
     parenthesized,
     parse::{Parse, ParseStream},
-    parse_macro_input, parse_quote,
+    parse_quote,
     punctuated::Punctuated,
     token, Error, Expr, Ident, Pat, Result, Token,
 };
 
-pub(super) fn proc_macro(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
-    let lambda = parse_macro_input!(input as Lambda);
-    let lambda_tokens = quote! {
-        #lambda
-    };
-    proc_macro::TokenStream::from(lambda_tokens)
-}
-
 #[derive(Debug)]
-struct Lambda {
+pub(super) struct Lambda {
     or1_token: Token![|],
     inputs: Punctuated<Pat, Token![,]>,
     or2_token: Token![|],

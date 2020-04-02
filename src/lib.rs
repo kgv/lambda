@@ -1,4 +1,7 @@
+use self::lambda::Lambda;
 use proc_macro::TokenStream;
+use quote::ToTokens;
+use syn::parse_macro_input;
 
 /// Lambda
 ///
@@ -48,7 +51,8 @@ use proc_macro::TokenStream;
 /// ```
 #[proc_macro]
 pub fn lambda(input: TokenStream) -> TokenStream {
-    lambda::proc_macro(input)
+    let lambda = parse_macro_input!(input as Lambda);
+    lambda.into_token_stream().into()
 }
 
 /// See lambda
