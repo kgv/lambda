@@ -3,7 +3,7 @@ name = "lambda"
 version = "0.1.0"
 authors = ["kgv <kgv@users.noreply.github.com>"]
 license = "MIT OR Apache-2.0"
-description = "Procedural macros for closures with shorthand argument names (like in Swift)."
+description = "Procedural macros for closures with shorthand argument names (like in Swift)"
 readme = "README.md"
 edition = "2018"
 
