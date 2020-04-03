@@ -1,5 +1,9 @@
 # Lambda
 
+[![Build Status](https://travis-ci.org/kgv/lambda.svg?branch=master)](https://travis-ci.org/kgv/lambda)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/kgv/format?svg=true)](https://ci.appveyor.com/project/kgv/format)
+[![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
+
 Procedural macros for closures with shorthand argument names (like in Swift)
 
 ## Usage
