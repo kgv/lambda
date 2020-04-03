@@ -39,3 +39,7 @@ let _ = [1, 2, 3].iter().fold(0, l!($1 + 1));
 // expanded:
 let _ = [1, 2, 3].iter().fold(0, |_, _1| _1 + 1);
 ```
+
+etc.
+
+**Limitation**: the last argument must be explicit.
