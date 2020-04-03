@@ -1,4 +1,4 @@
-#![feature(proc_macro_hygiene)]
+#![cfg_attr(feature = "nightly", feature(proc_macro_hygiene))]
 
 use lambda::l;
 
