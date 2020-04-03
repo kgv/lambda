@@ -1,0 +1,22 @@
+environment:
+  matrix:
+  - TARGET: x86_64-pc-windows-msvc
+    CHANNEL: nightly
+  - TARGET: x86_64-pc-windows-msvc
+    CHANNEL: nightly
+    cargoflags: --no-default-features --features=nightly
+  - TARGET: x86_64-pc-windows-msvc
+    CHANNEL: stable
+
+install:
+- appveyor DownloadFile https://win.rustup.rs/ -FileName rustup-init.exe
+- rustup-init -y --default-host %TARGET% --default-toolchain %CHANNEL%
+- set PATH=%PATH%;%USERPROFILE%\.cargo\bin
+- rustc -V
+- cargo -V
+
+build: false
+
+test_script:
+- cargo build --verbose
+- cargo test --verbose %cargoflags%
